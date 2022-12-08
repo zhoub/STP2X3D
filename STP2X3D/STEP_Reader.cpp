@@ -72,7 +72,7 @@ bool STEP_Reader::ReadSTEP(Model* model)
 			for (int i = 1; i <= shapeSize; ++i)
 			{
 				const TDF_Label& label_shape = labels_shapes.Value(i);
-				TopoDS_Shape& shape = m_shapeTool->GetShape(label_shape);
+				const TopoDS_Shape& shape = m_shapeTool->GetShape(label_shape);
 
 				Component* rootComp = new Component(shape);
 				rootComp->SetUniqueName(GetName(label_shape));

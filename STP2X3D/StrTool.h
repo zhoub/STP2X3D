@@ -1,5 +1,7 @@
 #pragma once
 
+#include <codecvt>
+
 class StrTool
 {
 public:
