@@ -57,8 +57,7 @@ void X3D_Writer::WriteX3D(Model*& model)
 	wofstream wof;
 
 	// This line is required to write Unicode characters.
-	codecvt_utf8<wchar_t, 0x10ffff, generate_header> cc;
-	wof.imbue(locale(locale(), &cc)); 
+	// wof.imbue(locale(locale(), new codecvt_utf8<wchar_t, 0x10ffff, generate_header>()));
 	
 	wof.open(filePath.c_str());
 	wof << ss_x3d.str().c_str();
